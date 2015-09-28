@@ -24,5 +24,5 @@ $services = array(
           'classpath'   => 'blocks/xp/externallib.php',  //file containing the class/external function
           'description' => 'Creates player experience.',    //human readable description of the web service function
           'type'        => 'read',                  //database rights of the web service function (read, write)
-      )
+      ),
   );

@@ -80,9 +80,9 @@ class local_xp_external extends external_api {
      */
     public static function get_experience_parameters() {
       return new external_function_parameters(
-          array(
+
              array('courseid' => new external_value(PARAM_INT, 'The courseid'))
-          )
+
       );
     }
 
@@ -106,9 +106,9 @@ class local_xp_external extends external_api {
 
         //Capability checking
         //OPTIONAL but in most web service it should present
-        if (!has_capability('moodle/user:viewdetails', $context)) {
-            throw new moodle_exception('cannotviewprofile');
-        }
+        // if (!has_capability('moodle/user:viewdetails', $context)) {
+        //     throw new moodle_exception('cannotviewprofile');
+        // }
         $manager = block_xp_manager::get($courseid);
         $progress = $manager->get_progress_for_user($USER->id);
         return $progress->xp;

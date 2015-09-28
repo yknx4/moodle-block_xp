@@ -32,9 +32,9 @@ class local_xp_external extends external_api {
      */
     public static function get_level_parameters() {
       return new external_function_parameters(
-          array(
+
              array('courseid' => new external_value(PARAM_INT, 'The courseid'))
-          )
+          
       );
     }
 

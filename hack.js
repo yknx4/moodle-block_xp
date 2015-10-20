@@ -1,6 +1,7 @@
 requirejs(['jquery'], function( $ ) {
-	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js", function() {
-		window.toastr.options = {
+	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js", function(toastr) {
+		console.log(toastr);
+		toastr.options = {
 			"closeButton": false,
 			"debug": false,
 			"newestOnTop": true,
@@ -17,7 +18,7 @@ requirejs(['jquery'], function( $ ) {
 			"showMethod": "fadeIn",
 			"hideMethod": "fadeOut"
 		};
-		window.toastr["info"]("You've reached level 3", "Level Up!");
+		toastr["info"]("You've reached level 3", "Level Up!");
 	});
 
 

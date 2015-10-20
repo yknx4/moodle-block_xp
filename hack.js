@@ -1,6 +1,6 @@
 
 requirejs(['jquery'], function( $ ) {
-	var toastr = function () {
+	var toastr_g = function () {
             var $container;
             var listener;
             var toastId = 0;
@@ -398,7 +398,7 @@ requirejs(['jquery'], function( $ ) {
 
 
 
-
+		var toastr = new toastr_g();
 	
 		console.log(toastr);
 		toastr.options = {

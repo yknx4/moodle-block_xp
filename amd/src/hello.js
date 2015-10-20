@@ -7,7 +7,7 @@
    
        // Public functions.
        return {
-          initialize: function(b) {
+          initialise: function(b) {
                // JQuery is available via $ if I want it
                alert('aaaaaaaah')
                //return privateFunc(b) + 1;

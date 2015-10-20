@@ -157,7 +157,7 @@ class block_xp extends block_base {
         // We should be congratulating the user because they leveled up!
         // $this->page->requires->js_call_amd('blocks/hello', 'initialise', '');
         $PAGE->requires->js_amd_inline('
-            require(['jquery'], function($) {
+            require([\'jquery\'], function($) {
                 alert("Your book is overdue."); 
            );
     });

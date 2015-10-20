@@ -52,7 +52,7 @@
     };
 
 
-    greeting.prototype.initialize = function ($params) {
+    greeting.prototype.initialize = function () {
       $.getScript( "toastr.js", function( toastr ) {
         toastr.options = {
           "closeButton": false,

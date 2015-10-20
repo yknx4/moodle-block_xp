@@ -1,5 +1,5 @@
 requirejs(['jquery'], function( $ ) {
-	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js", function(toastr) {
+	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js", function() {
 		toastr.options = {
 			"closeButton": false,
 			"debug": false,

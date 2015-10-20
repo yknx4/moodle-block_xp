@@ -156,7 +156,14 @@ class block_xp extends block_base {
 
         // We should be congratulating the user because they leveled up!
         // $this->page->requires->js_call_amd('blocks/hello', 'initialise', '');
-        $PAGE->requires->js_amd_inline('$(document).ready(function () { alert("Hello World"); });');
+        $PAGE->requires->js_amd_inline('
+            requirejs([\'jquery\'], function( $ ) {
+                console.log( $ ); // OK
+                $(document).ready(function () { alert("Hello World"); });
+            });
+
+
+            ');
 
 if (get_user_preferences($manager::USERPREF_NOTIFY, false)) {
     $args = array(

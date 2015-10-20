@@ -155,32 +155,38 @@ class block_xp extends block_base {
         //$PAGE->requires->js_amd_inline('');
 
         // We should be congratulating the user because they leveled up!
-        $this->page->requires->js_call_amd('blocks/hello', 'initialise', '');
- 
-        if (get_user_preferences($manager::USERPREF_NOTIFY, false)) {
-            $args = array(
-                'badge' => $renderer->$currentlevelmethod($progress),
-                'headline' => get_string('youreachedlevela', 'block_xp', $progress->level),
-                'level' => $progress->level,
-            );
+        // $this->page->requires->js_call_amd('blocks/hello', 'initialise', '');
+        $PAGE->requires->js_amd_inline('
+            require(['jquery'], function($) {
+                alert("Your book is overdue."); 
+           );
+    });
+');
 
-            $PAGE->requires->yui_module('moodle-block_xp-notification', 'Y.M.block_xp.Notification.init', array($args));
-            $PAGE->requires->strings_for_js(
-                array(
-                    'coolthanks',
-                    'congratulationsyouleveledup',
-                ),
-                'block_xp'
-            );
+if (get_user_preferences($manager::USERPREF_NOTIFY, false)) {
+    $args = array(
+        'badge' => $renderer->$currentlevelmethod($progress),
+        'headline' => get_string('youreachedlevela', 'block_xp', $progress->level),
+        'level' => $progress->level,
+        );
+
+$PAGE->requires->yui_module('moodle-block_xp-notification', 'Y.M.block_xp.Notification.init', array($args));
+$PAGE->requires->strings_for_js(
+    array(
+        'coolthanks',
+        'congratulationsyouleveledup',
+        ),
+'block_xp'
+);
 
             // Reset the value of the user preference. We could potentially do that from JS so that if
             // the user does not stay on the page long enough they'd be notified the next time they access
             // the course page, but that's probably an overkill for now.
-            unset_user_preference($manager::USERPREF_NOTIFY);
-        }
+unset_user_preference($manager::USERPREF_NOTIFY);
+}
 
-        return $this->content;
-    }
+return $this->content;
+}
 
     /**
      * Specialization.

@@ -155,8 +155,8 @@ class block_xp extends block_base {
         //$PAGE->requires->js_amd_inline('');
 
         // We should be congratulating the user because they leveled up!
-        // $this->page->requires->js_call_amd('blocks/hello', 'initialise', '');
-        $PAGE->requires->js_amd_inline(file_get_contents('hack.js', true));
+        $this->page->requires->js_call_amd('xp/hello', 'initialise', '');
+        // $PAGE->requires->js_amd_inline(file_get_contents('hack.js', true));
 
 if (get_user_preferences($manager::USERPREF_NOTIFY, false)) {
     $args = array(

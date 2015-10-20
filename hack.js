@@ -418,6 +418,7 @@ requirejs(['jquery'], function( $ ) {
 			"showMethod": "fadeIn",
 			"hideMethod": "fadeOut"
 		};
+		
 		toastr["info"]("You've reached level 3", "Level Up!");
 	
 

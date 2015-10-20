@@ -1,4 +1,11 @@
 requirejs(['jquery'], function( $ ) {
-                console.log( $ ); // OK
-                $(document).ready(function () { alert("Hello World"); });
-    });
+	$.getScript( "toastr.js", function(toastr) {
+
+
+	  console.log( "Load was performed." );
+	  alert( "Load was performed." );
+
+	});
+
+
+});
